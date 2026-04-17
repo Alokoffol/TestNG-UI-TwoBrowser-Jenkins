@@ -1,0 +1,21 @@
+<configuration>
+    <!-- Консольный вывод -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Корневой уровень логирования -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- Для наших тестов можно DEBUG -->
+    <logger name="com.example" level="DEBUG"/>
+    <logger name="base" level="DEBUG"/>
+    <logger name="pages" level="DEBUG"/>
+
+    <!-- Selenium логи лучше отключить (шумят) -->
+    <logger name="org.openqa.selenium" level="WARN"/>
+</configuration>
