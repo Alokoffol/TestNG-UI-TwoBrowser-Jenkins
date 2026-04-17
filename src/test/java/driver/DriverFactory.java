@@ -12,7 +12,7 @@ public class DriverFactory {
 
     public static WebDriver createDriver(String browserName) {
         // Используем твой готовый класс для настроек!
-        ChromeOptions options = ChromeOptionsConfig.createChromeOptions(false);
+        ChromeOptions options = ChromeOptionsConfig.createChromeOptions(true);
 
         if ("yandex".equalsIgnoreCase(browserName)) {
             // Указываем путь к Яндекс Браузеру
