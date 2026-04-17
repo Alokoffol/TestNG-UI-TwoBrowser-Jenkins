@@ -26,9 +26,9 @@ pipeline {
             steps {
                 script {
                     if (params.BROWSER == 'both') {
-                        sh 'mvn clean test'
+                        bat 'mvn clean test'
                     } else {
-                        sh "mvn clean test -Dbrowser=${params.BROWSER}"
+                        bat "mvn clean test -Dbrowser=${params.BROWSER}"
                     }
                 }
             }
