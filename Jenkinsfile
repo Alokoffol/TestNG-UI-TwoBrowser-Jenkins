@@ -22,6 +22,13 @@ pipeline {
             }
         }
 
+        stage('Clean cache') {
+            steps {
+                bat 'if exist C:\\Users\\Alok\\.cache\\selenium rmdir /s /q C:\\Users\\Alok\\.cache\\selenium'
+                echo '🧹 Кэш драйверов очищен'
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 script {
