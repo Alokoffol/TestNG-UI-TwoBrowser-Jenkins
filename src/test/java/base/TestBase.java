@@ -2,16 +2,11 @@ package base;
 
 import constants.AppConstants;
 import driver.DriverFactory;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import listeners.AllureListener;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-
-import java.io.ByteArrayInputStream;
 
 @Listeners(AllureListener.class)
 public class TestBase {

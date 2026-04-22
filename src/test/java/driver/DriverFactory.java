@@ -12,7 +12,9 @@ public class DriverFactory {
 
     public static WebDriver createDriver(String browserName) {
 
-        ChromeOptions options = ChromeOptionsConfig.createChromeOptions(false);
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+
+        ChromeOptions options = ChromeOptionsConfig.createChromeOptions(headless);
 
         if ("yandex".equalsIgnoreCase(browserName)) {
 
