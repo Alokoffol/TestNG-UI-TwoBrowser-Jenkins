@@ -9,17 +9,10 @@ import org.testng.TestListenerAdapter;
 
 import java.io.ByteArrayInputStream;
 
-/**
- * Слушатель для TestNG. Автоматически делает скриншот при падении теста.
- */
 public class AllureListener extends TestListenerAdapter {
 
     private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
-    /**
-     * Устанавливает драйвер для текущего потока.
-     * Вызывается из TestBase.
-     */
     public static void setDriver(WebDriver driver) {
         driverThreadLocal.set(driver);
     }
@@ -38,7 +31,7 @@ public class AllureListener extends TestListenerAdapter {
             Allure.addAttachment("Screenshot on failure", "image/png",
                     new ByteArrayInputStream(screenshot), "png");
         } catch (Exception e) {
-            // Если скриншот не получился - просто логируем
+
             System.err.println("Failed to take screenshot: " + e.getMessage());
         }
     }

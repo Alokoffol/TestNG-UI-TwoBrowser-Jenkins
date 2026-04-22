@@ -4,7 +4,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.HashMap;
 import java.util.Map;
 
-// Настройки хрома
 public class ChromeOptionsConfig {
 
     public static ChromeOptions createChromeOptions(boolean headless) {
@@ -33,12 +32,11 @@ public class ChromeOptionsConfig {
         options.addArguments("--disable-search-engine-choice-screen");
         options.addArguments("--disable-infobars");
 
-        // Читаем HEADLESS из environment переменной
         boolean headlessFromEnv = Boolean.parseBoolean(System.getenv("HEADLESS"));
         boolean isHeadless = headless || headlessFromEnv;
 
         if (isHeadless) {
-            options.addArguments("--headless=new");  // новый headless режим
+            options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");

@@ -83,12 +83,5 @@ public class CartTests extends TestBase {
 
         logStep("✅ Успешное возвращение к покупкам");
     }
-/*
-    @Test
-    public void testForceFailWithScreenshot() {
-        logStep("Этот тест специально упадет для проверки скриншота");
 
-        // Проверка, которая упадет
-        assertEquals(1, 2, "Специально сломали тест для проверки скриншота");
-    }/*/
 }

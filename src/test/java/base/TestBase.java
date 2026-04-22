@@ -38,12 +38,4 @@ public class TestBase {
         System.out.println("▶ " + stepName);
     }
 
-    protected void attachScreenshot() {
-        if (driver != null) {
-            byte[] screenshot = ((TakesScreenshot) driver)
-                    .getScreenshotAs(OutputType.BYTES);
-            Allure.addAttachment("Screenshot", "image/png",
-                    new ByteArrayInputStream(screenshot), "png");
-        }
-    }
 }
